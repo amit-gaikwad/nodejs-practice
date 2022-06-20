@@ -72,8 +72,11 @@ Using Middleware :
 
     res.send -> dont need to add response type it will automatically add as per the data
 
-    
-Routing
+
+Routing :
+
+  app.use -> have different implementation
+  we can pass first argument is path e.g. /student
 
 returning Html page
 
