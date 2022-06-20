@@ -55,7 +55,7 @@ const server = http.createServer((req, res) => {
        * output of above console is message=user_input_value
        * why message= because we have added name for input box that will create key value pair and send to the server
        */
-      const actualMessage = parsedBody[1]; // to take only value of message key
+      const actualMessage = parsedBody.split("=")[1]; // to take only value of message key
 
       fs.writeFileSync("message.txt", actualMessage);
     })
