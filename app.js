@@ -20,6 +20,24 @@ const server = http.createServer((req, res) => {
   // process.exit()
   //console.log(req.url, req.method, req.headers);
 
+  /**
+   * attach header for the response
+   */
+  res.setHeader('Content-Type', "text/html");
+
+  /**
+   * write some data to response kind of chunk of data
+   */
+  res.write("<html>");
+  res.write("<head><title>This is first page using nodejs</title></head>");
+  res.write("<body><h1>Hello from node</h1><body>")
+  res.write("</html>");
+
+  /**
+   * end the response
+   */
+  res.end()
+
 }) // create a server 
 
 // on going listening
