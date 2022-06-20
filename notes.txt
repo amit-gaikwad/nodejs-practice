@@ -29,7 +29,16 @@ Event Loop -> started by nodejs
                                 Execute all close event callbacks
                             process.exit() -> use refs === 0
 
-                            
+
+Note : the createServer() event never finishes by default
+
+
+Types of Error :
+
+1. Syntax Error
+2. Runtime Error
+3. Logical Error
+
 
                                   
 

@@ -1,0 +1,24 @@
+{
+  "name": "nodejs-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-server": "node app.js",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amit-gaikwad/nodejs-practice.git"
+  },
+  "author": "Amit Gaikwad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amit-gaikwad/nodejs-practice/issues"
+  },
+  "homepage": "https://github.com/amit-gaikwad/nodejs-practice#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
