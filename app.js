@@ -57,13 +57,16 @@ const server = http.createServer((req, res) => {
        */
       const actualMessage = parsedBody.split("=")[1]; // to take only value of message key
 
-      fs.writeFileSync("message.txt", actualMessage);
-      /**
-       * redirection using response
-       */
-      res.statusCode = 302;
-      res.setHeader('Location', '/');
-      return res.end();
+      // fs.writeFileSync("message.txt", actualMessage);
+
+      fs.writeFile('message.txt', actualMessage, (err) => {
+        /**
+         * redirection using response
+         */
+        res.statusCode = 302;
+        res.setHeader('Location', '/');
+        return res.end();
+      })
     })
 
   }
