@@ -1,4 +1,15 @@
-single Thread, Event Loop and blocking code
+/**
+ * http, https, fs, path and  os are default module
+ */
+
+/**
+ * http -> launch a server and send requests
+ * https -> launch a SSL server
+ * fs -> 
+ * require -> import files into any file it is default method exposed by nodejs
+ * 
+ */
+ single Thread, Event Loop and blocking code
 
 
 incoming request
@@ -40,8 +51,22 @@ Types of Error :
 3. Logical Error
 
 
-                                  
+Express.js ?
+  helps us to handle parsing data, focus on server logic which is more complex
+  use a framework for the heavy lifting 
 
+  Alternative for Express.js
+    Vanilla Node.js
+    Adonis.js -> Php framework kind
+    Koa
+    Sails.js
+    and more search on google
+  
 
+Using Middleware
+
+Routing
+
+returning Html page
 
 
