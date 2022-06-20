@@ -20,6 +20,19 @@ const server = http.createServer((req, res) => {
   // process.exit()
   //console.log(req.url, req.method, req.headers);
 
+
+  /**
+   * read url and send the response as per the url 
+  */
+  const url = req.url;
+  if (url === "/") {
+    res.write("<html>");
+    res.write("<head><title>Enter Message</title></head>");
+    res.write("<body><form action='/message' method='post'><input /> <button type='submit'> Submit</button></form></body>")
+    res.write("</html>");
+    return res.end();
+  }
+
   /**
    * attach header for the response
    */
@@ -30,7 +43,7 @@ const server = http.createServer((req, res) => {
    */
   res.write("<html>");
   res.write("<head><title>This is first page using nodejs</title></head>");
-  res.write("<body><h1>Hello from node</h1><body>")
+  res.write("<body><h1>Hello from node</h1></body>")
   res.write("</html>");
 
   /**
