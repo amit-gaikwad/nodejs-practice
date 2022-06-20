@@ -29,18 +29,42 @@ const server = http.createServer((req, res) => {
   if (url === "/") {
     res.write("<html>");
     res.write("<head><title>Enter Message</title></head>");
-    res.write("<body><form action='/message' method='post'><input /> <button type='submit'> Submit</button></form></body>")
+    res.write("<body><form action='/message' method='POST'><input type='text' name='message'> <button type='submit'> Submit</button></form></body>")
     res.write("</html>");
     return res.end();
   }
 
-  if(url==='/message' && method==="POST"){
-    fs.writeFileSync("message.txt","DUMMY");
+  if (url === '/message' && method === "POST") {
+    /**
+     * listen to data streaming from the client
+     * use buffer to handle such data
+     */
+    const body = []
+    req.on('data', (chunk) => {
+      console.log("chunk>>>", chunk);
+      body.push(chunk)
+    })
+
+    req.on('end', () => {
+      /**
+       * to work on the stream data we need buffer as like stop in bus transmission
+       */
+      const parsedBody = Buffer.concat(body).toString();
+      console.log("parsedBody>>>", parsedBody);
+      /**
+       * output of above console is message=user_input_value
+       * why message= because we have added name for input box that will create key value pair and send to the server
+       */
+      const actualMessage = parsedBody[1]; // to take only value of message key
+
+      fs.writeFileSync("message.txt", actualMessage);
+    })
+
     /**
      * redirection using response
      */
-    res.statusCode =302;
-    res.setHeader('Location','/');
+    res.statusCode = 302;
+    res.setHeader('Location', '/');
     return res.end();
   }
 
