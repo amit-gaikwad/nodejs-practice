@@ -45,7 +45,7 @@ const server = http.createServer((req, res) => {
       body.push(chunk)
     })
 
-    req.on('end', () => {
+    return req.on('end', () => {
       /**
        * to work on the stream data we need buffer as like stop in bus transmission
        */
@@ -58,14 +58,14 @@ const server = http.createServer((req, res) => {
       const actualMessage = parsedBody.split("=")[1]; // to take only value of message key
 
       fs.writeFileSync("message.txt", actualMessage);
+      /**
+       * redirection using response
+       */
+      res.statusCode = 302;
+      res.setHeader('Location', '/');
+      return res.end();
     })
 
-    /**
-     * redirection using response
-     */
-    res.statusCode = 302;
-    res.setHeader('Location', '/');
-    return res.end();
   }
 
   /**
