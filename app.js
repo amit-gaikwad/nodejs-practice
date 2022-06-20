@@ -13,4 +13,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(adminRoutes);
 app.use(shopRoutes);
 
+app.use((req, res) => {
+  res.status(404).send('<h1 style="color:red;">Page Not found</h1>')
+})
+
 app.listen(8080);
