@@ -63,8 +63,16 @@ Express.js ?
     and more search on google
   
 
-Using Middleware
+Using Middleware :
 
+        Request -> Middleware -> Middleware -> Response
+                          next() -> res.send()
+
+    next() -> allows code to call next Middleware
+
+    res.send -> dont need to add response type it will automatically add as per the data
+
+    
 Routing
 
 returning Html page

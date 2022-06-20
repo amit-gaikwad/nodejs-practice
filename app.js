@@ -1,12 +1,15 @@
-
-
-const http = require("http");
-
 const express = require("express");
 
 const app = express();
 
+app.use((req, res, next) => {
+  console.log("In The Middleware 1");
+  next();
+})
 
-const server = http.createServer(app) // create a server 
+app.use((req, res, next) => {
+  console.log("In The Middleware 2");
+  res.send("<h1>This is from express</h1>");
+})
 
-server.listen(8080);
+app.listen(8080);
