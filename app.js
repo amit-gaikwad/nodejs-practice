@@ -2,14 +2,14 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 
-app.use(bodyParser.urlencoded())
+app.use(bodyParser.urlencoded({extended:false}))
 
 app.use('/add-product', (req, res, next) => {
   console.log("this is add product route");
   res.send('<form action="/product" method="POST" > <input name="title"/><button type="submit">Submit</button></form>')
 });
 
-app.use('/product', (req, res, next) => {
+app.post('/product', (req, res, next) => {
   console.log(req.body);
   res.redirect("/")
 });
