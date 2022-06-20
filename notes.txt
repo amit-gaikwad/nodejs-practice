@@ -1,0 +1,38 @@
+single Thread, Event Loop and blocking code
+
+
+incoming request
+
+your code -> single javascript thread
+                                    -> Event Loop
+                                        handle Event Callbacks
+
+                                    -> fs 
+                                        send to  -> Worker Pool -> managed by nodejs 
+                                                    do the heavly Lifting
+                                                    Different Thread(s)!
+
+                                    Once WOrker pool complete read file then it trigger callback of event Loop
+
+
+Event Loop -> started by nodejs 
+                Checks for the
+                            Timers
+                                Execute setTimeout, setInterval Callbacks
+                            Pending Callbacks
+                                Execute I/O related Callbacks that were deffered
+                            Poll 
+                                Retrieve new I/O events Execute their Callbacks
+                            Check 
+                                Execute setImmediate() Callbacks
+                            Close Callbacks
+                                Execute all close event callbacks
+                            process.exit() -> use refs === 0
+
+                            
+
+                                  
+
+
+
+
