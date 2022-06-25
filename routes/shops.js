@@ -16,7 +16,8 @@ router.get("/", (req, res, next) => {
    * __dirname global varibale which holds absolute path of this project folder
    */
   // res.sendFile(path.join(__dirname, "../", "views", "shop.html"));
-  res.render("shop.pug");
+  const { products } = adminData;
+  res.render("shop.pug", { products: products, title: "Shop Page" });
 });
 
 module.exports = router;
