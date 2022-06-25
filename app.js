@@ -5,6 +5,14 @@ const adminData = require("./routes/admin");
 const shopRoutes = require("./routes/shops");
 
 const app = express();
+/**
+ * set global values through the app
+ * app.set('title',"amit");
+ * view engine -> tell express to use dynamic engine
+ * pub is already supported wutb express
+ */
+app.set('view engine','pub'); 
+app.set('views','views');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 

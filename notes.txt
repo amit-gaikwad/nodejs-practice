@@ -89,4 +89,14 @@ Managing Data(without Data)
 
 REnder Dynamic data
 
-UnderStand template engine
+UnderStand template engine :
+
+Create templates , replace placeholder
+EJS  =>    <p> <%= name %> </p>
+Pug  =>    p #{name}
+Handlebars =>   <p>{{name}}</p>
+
+EJS =>Use normal HTMl and plain Javascript in your templates 
+Pug =>Use minimal Html ad custom template language
+Hand => Use no rmal HTml and custom template language
+
