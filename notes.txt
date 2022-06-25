@@ -83,3 +83,10 @@ returning Html page
 
 app.use(express.static(path.join(__dirname,'public'))) => give read access to public folder server to read the folder publicly
 
+
+
+Managing Data(without Data)
+
+REnder Dynamic data
+
+UnderStand template engine
