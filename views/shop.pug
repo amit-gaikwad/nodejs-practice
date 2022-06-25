@@ -1,22 +1,10 @@
-doctype html
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title #{title}
-        //link(rel="stylesheet", href="/css/main.css")
-    body
-        header.main-header
-            nav
-                ul 
-                    li 
-                        a.active(href="/") Shop 
-                        a(href="/admin/add-product") Add Product 
+extends layouts/main.pug
+
+block content 
         .product-list 
             each product in products 
                 div.prod-item
                     h2.prod-title #{product.title}
-                    .item-price #{product.price || 10}                
+                    .item-price #{product.price || 5555}                
 
 
