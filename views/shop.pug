@@ -17,6 +17,6 @@ html(lang="en")
             each product in products 
                 div.prod-item
                     h2.prod-title #{product.title}
-                    .item-price $10                 
+                    .item-price #{product.price || 10}                
 
 
